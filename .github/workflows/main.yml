@@ -1,0 +1,34 @@
+# this is the basic workflow to help you get started with github actions 
+name:  CI
+
+on:  #controls when the workflow will run 
+
+  #triggers the workflow on push or pull events but only in the main branch
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+#allows you to run this workflow manually from the actions tab 
+  workflow_dispatch: 
+jobs: # a workflow run is made up of one or more jobs that can run sequentially or in parallel 
+  #this workflow contains a single job called build 
+  build-and-release: 
+    runs-on: ubuntu-latest #type of runner that the job will run on 
+
+    steps: 
+      #checks out your repository under $GITHUB_WORKSPACE, so your job can acess it 
+      - uses: action/checkout@v3
+
+      #runs a single command using the runners shell 
+
+      name: Run a one-line script
+      run: echo, hello world! 
+
+      #run a set of commands using the runner's shell[
+      name: run a multi-line script 
+
+      run: echo Add other action to build, 
+      echo test, and deploy your project
+
+      
+    
