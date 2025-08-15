@@ -1,0 +1,11 @@
+name: Hello World
+
+on:
+  workflow_dispatch:  # Permite rodar manualmente no botão "Run workflow"
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Máquina que vai executar o job
+    steps:
+      - name: Imprimir Hello World
+        run: echo "Hello World from GitHub Actions!"
